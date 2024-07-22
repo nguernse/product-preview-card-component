@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --color-dark-cyan: hsl(158, 36%, 37%);
+  --color-cream: hsl(30, 38%, 92%);
+  --color-dark-blue: hsl(212, 21%, 14%);
+  --color-gray-blue: hsl(228, 12%, 48%);
+  --color-light-gray: hsl(40, 1.5%, 55%);
+  --color-white: hsl(0, 0%, 100%);
+  --font-weight-normal: 500;
+  --font-weight-heavy: 700;
+  --font-family-main: "Montserrat", sans-serif;
+  --font-family-secondary: "Fraunces", serif;
+  --spacing-small: 0.5rem;
+  --spacing-base: 1rem;
+  --spacing-medium: 1.5rem;
+  --spacing-large: 2rem;
+  --radius-small: 0.5rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.5rem;
+  --text-base: 14px;
+  --text-small: 0.75rem;
+  --text-medium: 1.15rem;
+  --text-large: 2.15rem;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+html {
+  font-size: var(--text-base, 14px);
+  font-family: "Montserrat", sans-serif;
+  font-weight: var(--font-weight-normal);
+  background-color: var(--color-cream);
+  line-height: 1.5;
+}
+
+main {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  background-color: var(--color-white);
+  border-radius: var(--radius-small);
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+}
+
+.product-thumbnail {
+  width: 100%;
+  height: 250px;
+}
+
+.product-thumbnail,
+.product-thumbnail img {
+  border-top-left-radius: var(--radius-small);
+  border-top-right-radius: var(--radius-small);
+}
+
+.product-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: var(--spacing-large);
+}
+
+.product-body > *:not(:last-child) {
+  margin-bottom: var(--spacing-medium);
+}
+
+.product-category {
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  color: var(--color-light-gray);
+}
+
+.product-heading {
+  color: var(--color-dark-blue);
+  font-weight: var(--font-weight-heavy);
+  font-family: var(--font-family-secondary);
+  font-size: var(--text-medium);
+  line-height: 1;
+}
+
+.product-description {
+  color: var(--color-light-gray);
+}
+
+.product-pricing {
+  display: flex;
+  align-items: center;
+}
+
+.discount-price {
+  color: var(--color-dark-cyan);
+  font-family: var(--font-family-secondary);
+  font-weight: var(--font-weight-heavy);
+  margin-right: var(--spacing-base);
+  font-size: var(--text-large);
+}
+.actual-price {
+  text-decoration: line-through;
+  font-size: var(--text-base);
+  color: var(--color-light-gray);
+}
+
+.btn {
+  cursor: pointer;
+  width: 100%;
+  background-color: var(--color-dark-cyan);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-small);
+  padding: var(--spacing-base);
+  font-weight: var(--font-weight-heavy);
+  font-size: var(--text-base);
+}
+
+.btn img {
+  height: 18px;
+  width: 18px;
+  margin-right: var(--spacing-base);
+}
+
+.btn:hover {
+  background-color: hsl(158, 36%, 31%);
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .product {
+    flex-direction: row;
+    max-width: 575px;
+    width: 575px;
+  }
+
+  .product > * {
+    flex: 1 0 50%;
+  }
+
+  .product-thumbnail {
+    height: auto;
+  }
+
+  .product-thumbnail,
+  .product-thumbnail img {
+    border-top-left-radius: var(--radius-small);
+    border-bottom-left-radius: var(--radius-small);
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+}
